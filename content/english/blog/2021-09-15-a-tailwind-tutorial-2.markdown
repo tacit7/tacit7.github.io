@@ -6,11 +6,8 @@ tags: [Rails, JavaScript, tutorial]
 toc: true
 toc_label: 'Tailwind'
 
-header:
-  image: /images/tailwind.jpg
-  actions:
-    - label: "Part 1"
-      url: "/a-tailwind-tutorial"
+image: /images/tailwind.jpg
+  #
 
 excerpt: Part 2 of the tailwind tutorial!. Let's add some DaisyUI components and add a light/dark mode functionality to the app!
 ---

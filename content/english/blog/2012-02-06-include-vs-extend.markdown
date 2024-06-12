@@ -2,6 +2,7 @@
 publishDate: "2012-02-06"
 title: Understanding `include` vs `extend` in Ruby
 category: [Ruby]
+image: /images/teaser.png
 tags: [basics, ruby]
 ---
 

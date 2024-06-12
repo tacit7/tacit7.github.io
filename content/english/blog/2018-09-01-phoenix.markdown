@@ -1,9 +1,9 @@
 ---
 publishDate: "2018-09-01"
 title: The Phoenix Framework
-category: frameworks
-tags: [tools, elixir, phoenix]
-image: /assets/images/phoenix.png
+image: /images/phoenix.jpg
+categores: [Frameworks]
+tags: [Tools, Elixir, Phoenix]
 excerpt: What is Ruby's eigenclass? Let's dive in and learn the basis for ruby's metaprogramming.
 ---
 

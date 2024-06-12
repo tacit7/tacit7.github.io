@@ -1,7 +1,7 @@
 ---
 publishDate: "2017-09-12"
 title: "Resolving routing error"
-
+image: /images/teaser.png
 ---
 ## Resolving the `to must respond to 'action' or 'call', or it must be a String that includes '#' (ArgumentError)` Error
 

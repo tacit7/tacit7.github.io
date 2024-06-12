@@ -2,7 +2,7 @@
 publishDate: "2021-09-22"
 title: "What is esbuild?"
 tags: [JavaScript, Rails]
-#published: false
+image: /images/teaser.png
 hidden: true
 ---
 

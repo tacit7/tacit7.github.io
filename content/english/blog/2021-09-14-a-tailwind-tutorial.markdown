@@ -5,12 +5,10 @@ tags: [Rails, JavaScript, tutorial]
 
 toc: true
 toc_label: 'Tailwind'
-
-header:
-  image: /images/tailwind.jpg
-  actions:
-    - label: "Part 2"
-      url: "/a-tailwind-tutorial-2"
+image: /images/tailwind.jpg
+  # actions:
+  #   - label: "Part 2"
+  #     url: "/a-tailwind-tutorial-2"
 excerpt: Tailwind CSS is a utility-first CSS framework for rapidly building modern websites without ever leaving your HTML. Let's see how we can use this CSS framework in Rails!
 ---
 

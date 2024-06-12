@@ -4,6 +4,7 @@ title: Sprockets vs Propshaft
 tags: [Rails, JavaScript]
 excerpt: Understanding the differences between Sprockets and Propshaft in Ruby on Rails.
 hidden: true
+image: /images/teaser.png
 ---
 
 ## Sprockets vs Propshaft: Understanding the Asset Pipeline in Ruby on Rails

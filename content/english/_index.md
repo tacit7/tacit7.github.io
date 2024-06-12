@@ -36,7 +36,7 @@ features:
       label: "Read More"
       link: "/blog/2020-03-25-github-actions/"
 
-  - title: "The Top Reasons to Choose Hugo for Your Hugo Project"
+  - title: "Tailwind in Rails"
     image: "/images/tailwind.jpg"
     content: "Discover how Tailwind CSS can transform your web applications with its utility-first approach to styling. In this article, we’ll guide you through setting up a Ruby on Rails project with Tailwind CSS, highlighting its responsive design, customization, and built-in dark mode. Learn to create a polished home page using Tailwind UI components and integrate DaisyUI for maintainable styles."
     button:

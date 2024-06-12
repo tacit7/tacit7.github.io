@@ -3,7 +3,7 @@ publishDate: "2012-02-01"
 title: Understanding `load` vs `require` in Ruby
 category: [Ruby, Basics]
 tags: [basics, ruby]
-image: /images/teaser.jpg
+image: /images/teaser.png
 ---
 
 In Ruby, there are two ways to include external code files into your program: `load` and `require`. While both serve the same purpose of incorporating code from other files, there are some key differences between them that are important to understand.
