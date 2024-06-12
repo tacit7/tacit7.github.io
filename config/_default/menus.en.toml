@@ -14,12 +14,17 @@ weight = 2
 [[main]]
 name = "Rails"
 pageRef = "/tags/rails/"
-weight = 2
+weight = 3
+
+[[main]]
+name = "Tutorials"
+pageRef = "/tags/tutorial/"
+weight = 4
 
 [[main]]
 name = "About"
 pageRef = "/about"
-weight = 4
+weight = 5
 
 # [[main]]
 # name = "Elements"
