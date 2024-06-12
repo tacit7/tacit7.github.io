@@ -1,0 +1,25 @@
+---
+title: Concise Guide to Kafka
+categories: [Kafka]
+tags: [cheat-sheet]
+header:
+  overlay_image: /assets/images/kafka.jpg
+  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
+  teaser: /assets/images/kafka.jpg
+excerpt: A quick cheat sheet for kafka.
+---
+
+Apache Kafka is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications.Kafka is a distributed messaging system that allows producers to publish and subscribe to streams of records in a fault-tolerant and scalable manner.
+
+Here's a concise overview on how Kafka works:
+
+1. **Producers**: Producers publish data streams to Kafka topics. These producers send data records to Kafka brokers.
+2. **Topics**: Data is organized into topics, which are similar to log files or queues. Each topic is partitioned and replicated across multiple brokers for fault tolerance and scalability.
+3. **Partitions**: Each topic is divided into partitions, which are ordered, immutable sequences of records. Partitions allow topics to be parallelized across multiple brokers, enabling high throughput and horizontal scaling.
+4. **Brokers**: Kafka brokers are the servers that make up a Kafka cluster. Each broker handles the storage and management of partitions for one or more topics. Brokers receive records from producers, store them, and serve them to consumers.
+5. **Consumers**: Consumers are applications or services that subscribe to one or more topics and consume data records from the partitions of those topics. Consumers are organized into consumer groups, which allow for load balancing and fault tolerance.
+6. **Offset**: Each record in a partition has a unique offset, which is a sequential ID assigned by Kafka. Consumers use offsets to keep track of their position in a partition, ensuring that they don't miss or duplicate records.
+
+When a producer publishes a record to a topic, it is appended to one of the topic's partitions based on a partitioning strategy. The record is then replicated across multiple brokers.
+
+Consumers subscribe to topics and read records from the partitions they are assigned to. Kafka maintains the order of records within a partition but not across partitions within a topic. If multiple consumers are part of the same consumer group, the partitions are automatically load-balanced across the group members.

@@ -1,0 +1,59 @@
+---
+title: "What is esbuild?"
+tags: [JavaScript, Rails]
+#published: false
+hidden: true
+---
+
+
+Esbuild processes your JavaScript and TypeScript files and bundles them into a single or multiple output files that can be included in your web application. Here's a basic example of how you might use Esbuild:
+
+1. **Installation**:
+
+   You can install Esbuild via npm or yarn:
+
+   ```bash
+   npm install esbuild --save-dev
+   ```
+
+   or
+
+   ```bash
+   yarn add esbuild --dev
+   ```
+
+2. **Configuration**:
+
+   You can run Esbuild with a simple command or create a configuration file for more complex setups. Here's an example of a basic build script in `package.json`:
+
+   ```json
+   {
+     "scripts": {
+       "build": "esbuild src/index.js --bundle --outdir=dist --minify"
+     }
+   }
+   ```
+
+   This script tells Esbuild to bundle `src/index.js`, output the result to the `dist` directory, and minify the bundle.
+
+3. **Running Esbuild**:
+
+   You can then run the build script using npm or yarn:
+
+   ```bash
+   npm run build
+   ```
+
+   or
+
+   ```bash
+   yarn build
+   ```
+
+## Integration with Rails
+
+In a Rails application, Esbuild can be used to manage JavaScript and CSS assets. By integrating Esbuild, you can leverage its speed and efficiency to improve the asset compilation process in your Rails apps. When you create a new Rails app with the `-j esbuild` option, Rails sets up Esbuild for you, making it straightforward to use.
+
+## Advantages of Using Esbuild
+
+Esbuild offers significant advantages for web development, primarily due to its performance and simplicity. As an extremely fast bundler and minifier, it can handle large codebases efficiently, drastically reducing build times. Its configuration is relatively straightforward compared to other bundlers like Webpack, making it easier to set up and maintain. Additionally, Esbuild supports modern JavaScript features and seamlessly integrates with TypeScript, React, and other contemporary frameworks and libraries, making it a powerful tool for modern web development.

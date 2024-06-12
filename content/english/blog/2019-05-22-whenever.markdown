@@ -1,0 +1,115 @@
+---
+title: "Automate Your Scripts with the Whenever Gem: A Simple Guide"
+category: automation
+tags: [ruby, tutorial]
+header:
+  overlay_image: /assets/images/whenever.jpg
+  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
+  teaser: /assets/images/whenever.jpg
+excerpt: Get ready to automate your tasks with Whenever. Let's dive-in  and see how we can use this gem to easily create and manage cron jobs in Ruby.
+---
+
+I don't know about you, but I have several scripts that I run in order to perform different tasks. I have scripts to remind me to perform certain tasks through out the day, perform periodic backups, empty my trash folder, change my wallpaper. I used to run then using crontab, but it turns out that there's an easier way.
+
+## What is the Whenever Gem?
+
+The Whenever gem is a Ruby library that provides a clean and readable syntax for writing and deploying cron jobs. Cron jobs are tasks that you want to run periodically at specific times, like backups, updates, or routine data processing. While setting up cron jobs manually can be daunting, Whenever simplifies the process with an easy-to-understand syntax.
+
+## Getting Started
+
+### Step 1: Install the Gem
+
+First things first, you'll need to install the Whenever gem. Open your terminal and run:
+
+`gem install whenever`
+
+Or, you can use Bundler by creating a Gemfile in where whenever lives:
+
+`gem 'whenever', require: false`
+
+Then run:
+
+`bundle install`
+
+### Step 2: Set Up Whenever in Your Project
+
+Navigate to your directory and initialize Whenever:
+
+`wheneverize .`
+
+This command creates a `config/schedule.rb` file where you'll define all your cron jobs.
+
+## Writing Your First Cron Job
+
+Open the `config/schedule.rb` file. This is where the magic happens. Let's say you have a script called `backup.rb` that you want to run every day at midnight. Here's how you can schedule it:
+
+```ruby
+every 1.day, at: '12:00 am' do
+	command "ruby /path/to/your/script/backup.rb"
+end
+```
+
+It's that simple! Whenever converts this into a cron job under the hood.
+
+## More Examples
+
+### Running a Rake Task
+
+If you're working within a Rails application and have a Rake task to clear old records, you can schedule it like this:
+
+```ruby
+every :hour do
+	rake "db:clear_old_records"
+end
+```
+
+### Executing a Shell Command
+
+Need to clean up temporary files every week? Here's how:
+
+```ruby
+
+every :sunday, at: '4:30 am' do
+	command "rm -rf /tmp/*"
+end
+```
+
+### Custom Ruby Scripts
+
+You can also schedule custom Ruby scripts:
+
+```ruby
+every 2.days, at: '3:00 pm' do
+	runner "MyModel.some_method"
+end
+```
+
+## Deploying Your Schedule
+
+After defining your tasks, it's time to update your crontab. Run:
+
+`whenever --update-crontab`
+
+This command translates your `schedule.rb` into a crontab format and installs it in your crontab file.
+
+## Viewing and Clearing the Crontab
+
+To see the current crontab entries created by Whenever, use:
+
+`whenever`
+
+To clear all Whenever-created crontab entries, run:
+
+`whenever --clear-crontab`
+
+## Tips and Best Practices
+
+- **Use Full Paths**: Always use full paths to your scripts and commands to avoid path issues.
+
+- **Log Your Jobs**: Redirect output to log files to keep track of job execution and debug any issues.
+
+  `set :output, "/path/to/my/cron_log.log"`
+
+## Conclusion
+
+The Whenever gem is a powerful tool that brings simplicity and clarity to managing cron jobs. By following this guide, you can automate routine tasks, save time, and focus on more important aspects of your projects. Happy automating!
