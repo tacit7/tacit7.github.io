@@ -1,12 +1,9 @@
 ---
-title: Understanding yield
+title: Understanding Yield
 category: ruby
 tags: [basics, ruby]
 date: 2018-06-11T0
-header:
-  overlay_image: /assets/images/yield.jpg
-  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
-  teaser: /assets/images/yield.jpg
+image: /images/yield.jpg
 ---
 
 In Ruby, the `yield` keyword plays an important role creating code reusability and flexibility with the use of blocks. It allows methods to execute code passed by the caller. This is a very powerful and useful tool that every ruby dev needs to have under their toolbelt.
