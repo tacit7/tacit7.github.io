@@ -1,10 +1,9 @@
 ---
+publishDate: "2018-02-13"
 title: The schema file
 category: [Rails]
 header:
-  overlay_image: /assets/images/blueprint.jpg
-  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
-  teaser: /assets/images/blueprint.jpg
+  image: /images/blueprint.jpg
 excerpt: What is Ruby's eigenclass? Let's dive in and learn the basis for ruby's metaprogramming.
 ---
 

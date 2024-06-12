@@ -1,4 +1,5 @@
 ---
+publishDate: "2021-01-28"
 title: Sprockets vs Propshaft
 tags: [Rails, JavaScript]
 excerpt: Understanding the differences between Sprockets and Propshaft in Ruby on Rails.

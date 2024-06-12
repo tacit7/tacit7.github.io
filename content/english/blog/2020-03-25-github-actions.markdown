@@ -1,11 +1,10 @@
 ---
+publishDate: "2020-03-25"
 title: Creating a GitHub Actions Workflow
 category: GitHub
 tags: [tutorial]
 header:
-  overlay_image: /assets/images/github-actions.jpg
-  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
-  teaser: /assets/images/github-actions.jpg
+  image: /images/github-actions.jpg
 ---
 
 GitHub Actions is a feature that allows you to automate tasks and workflows right within your GitHub repositories. It lets you build, test, and deploy your code projects seamlessly.

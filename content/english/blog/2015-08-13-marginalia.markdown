@@ -1,4 +1,5 @@
 ---
+publishDate: "2015-08-13"
 title: "Marginalia Gem in Rails"
 category: Rails
 tags: [ActiveRecord, Rails, tutorial]

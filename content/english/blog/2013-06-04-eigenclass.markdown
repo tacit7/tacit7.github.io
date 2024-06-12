@@ -1,4 +1,5 @@
 ---
+publishDate: "2013-06-04"
 title: "Ruby's Eigenclass"
 categories: [Ruby,  Basics]
 tags: [basics, ruby]

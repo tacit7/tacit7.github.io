@@ -1,11 +1,10 @@
 ---
+publishDate: "2013-11-04"
 title: Rails Scopes
 category: ActiveRecord
 tags: [Rails, SQL, ActiveRecord]
 header:
-  overlay_image: /assets/images/scopes.jpg
-  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
-  teaser: /assets/images/scopes.jpg
+  image: /images/scopes.jpg
 ---
 
 ActiveRecord scopes are an essential tool in any Rails developer's arsenal. They help make database queries cleaner, more reusable, and easier to read. In this article, we'll dive into what scopes are, how to use them, and why they can improve the maintainability of your Rails applications.

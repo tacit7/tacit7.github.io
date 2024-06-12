@@ -1,11 +1,10 @@
 ---
+publishDate: "2016-02-21"
 title: "Use the Index, Part 1"
 category: SQL
 tags: [SQL]
 header:
-  overlay_image: /assets/images/use-the-index.jpg
-  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
-  teaser: /assets/images/use-the-index.jpg
+  image: /images/use-the-index.jpg
 excerpt: Use the Index! Is an online book that goes in-depth about how to use and create indexes. These are a few notes from the book.
 ---
 

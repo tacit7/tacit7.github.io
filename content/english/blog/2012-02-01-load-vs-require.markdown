@@ -1,4 +1,5 @@
 ---
+publishDate: "2012-02-01"
 title: Understanding `load` vs `require` in Ruby
 category: [Ruby, Basics]
 tags: [basics, ruby]

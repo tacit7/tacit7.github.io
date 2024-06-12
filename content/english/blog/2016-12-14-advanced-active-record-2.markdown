@@ -1,10 +1,9 @@
 ---
+publishDate: "2016-12-14"
 title: Advanced ActiveRecord Queries Part 2
 tags: [ActiveRecord, Rails]
 header:
-  overlay_image: /assets/images/advanced-queries-2.jpg
-  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
-  teaser: /assets/images/advanced-queries-2.jpg
+  image: /images/advanced-queries-2.jpg
   actions:
     - label: "Part 1"
       url: "/advanced-active-record"

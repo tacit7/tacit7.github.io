@@ -1,4 +1,5 @@
 ---
+publishDate: "2016-12-12"
 title: Advanced ActiveRecord Queries Part 1
 tags: [ActiveRecord, Rails]
 # image: "/images/shiny-robot.jpg"

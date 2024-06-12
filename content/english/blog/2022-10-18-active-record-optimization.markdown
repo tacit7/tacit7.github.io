@@ -1,10 +1,10 @@
 ---
+publishDate: "2022-10-18"
 title: Optimizing ActiveRecord Rundown - Part 1
 category: ActiveRecord
 tags: [sql, Rails]
 header:
-  overlay_image: /assets/images/chest.jpg
-  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
+  image: /images/chest.jpg
 ---
 
 Optimizing ActiveRecord in Rails involves several strategies to improve the performance of database interactions and application efficiency. And there are plenty of articles on how to do that. Here are some techniques to that will help you make ActiveRecord more performant.

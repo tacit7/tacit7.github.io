@@ -1,4 +1,5 @@
 ---
+publishDate: "2021-09-14"
 title: "Tailwind in Rails"
 tags: [Rails, JavaScript, tutorial]
 
@@ -6,9 +7,7 @@ toc: true
 toc_label: 'Tailwind'
 
 header:
-  overlay_image: /assets/images/tailwind.jpg
-  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
-  teaser: /assets/images/tailwind.jpg
+  image: /images/tailwind.jpg
   actions:
     - label: "Part 2"
       url: "/a-tailwind-tutorial-2"

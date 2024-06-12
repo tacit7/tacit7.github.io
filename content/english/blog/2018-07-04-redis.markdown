@@ -1,4 +1,5 @@
 ---
+publishDate: "2018-07-04"
 title: "Redis: The Blazing Fast Database"
 category: database
 tags: [redis, database, sql, nosql]
