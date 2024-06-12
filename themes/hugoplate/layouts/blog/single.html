@@ -4,6 +4,7 @@
       <div class="row justify-center">
         <article class="lg:col-10">
           {{ $image:= .Params.image }}
+          {{ $toc:= .Params.toc }}
           {{ if $image }}
             <div class="mb-10">
               {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "w-full rounded") }}
@@ -41,7 +42,9 @@
             </li>
           </ul>
           <div class="content mb-10">
-            {{ partial "toc.html" (dict "Class" "blog" "Collapsed" false "TableOfContents" .TableOfContents ) }}
+            {{ if $toc }}
+             {{ partial "toc.html" (dict "Class" "blog" "Collapsed" false "TableOfContents" .TableOfContents ) }}
+            {{ end }}
             {{ .Content }}
           </div>
           <div class="row items-start justify-between">

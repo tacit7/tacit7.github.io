@@ -1,53 +1,46 @@
 ---
 # Banner
 banner:
-  title: "The Ultimate Starter Template You Need To Start Your Hugo Project"
-  content: "Hugoplate is a free starter template built with Hugo and TailwindCSS, providing everything you need to jumpstart your Hugo project and save valuable time."
-  image: "/images/banner.png"
-  button:
-    enable: true
-    label: "Get Started For Free"
-    link: "https://github.com/zeon-studio/hugoplate"
+  title: '<i class="fa-solid fa-rocket"></i> Rails and Beyond <i class="fa-solid fa-rocket"></i>'
+  content: "Welcome! Join me as we explore the exciting worlds of Rails, programming languages galore, and cutting-edge tech. Whether you're a pro or just starting out, let's geek out together over web dev, cloud computing, and the latest innovations!"
+  image: /images/splash-rocket.png
+  testimonial: false
+  # button:
+  #   enable: true
+  #   label: "Get Started For Free"
+  #   link: "https://github.com/zeon-studio/hugoplate"
 
 # Features
 features:
-  - title: "What's Included in Hugoplate"
-    image: "/images/service-1.png"
-    content: "Hugoplate is a comprehensive starter template that includes everything you need to get started with your Hugo project. What's Included in Hugoplate"
+  - title: "Advanced ActiveRecord Queries"
+    image: "/images/robot.jpg"
+    content: "Efficient database querying is crucial for maintaining performance and scalability. Delve into the intricacies of ActiveRecord and explore techniques for optimizing queries in belongs_to and has_many relationships. Learn how to:"
     bulletpoints:
-      - "10+ Pre-build pages"
-      - "95+ Google Pagespeed Score"
-      - "Build with Hugo and TailwindCSS for easy and customizable styling"
-      - "Fully responsive on all devices"
-      - "SEO-optimized for better search engine rankings"
-      - "**Open-source and free** for personal and commercial use"
-    button:
-      enable: false
-      label: "Get Started Now"
-      link: "#"
-
-  - title: "Discover the Key Features Of Hugo"
-    image: "/images/service-2.png"
-    content: "Hugo is an all-in-one web framework for building fast, content-focused websites. It offers a range of exciting features for developers and website creators. Some of the key features are:"
-    bulletpoints:
-      - "Zero JS, by default: No JavaScript runtime overhead to slow you down."
-      - "Customizable: Tailwind, MDX, and 100+ other integrations to choose from."
-      - "UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more."
+      - "Minimize N+1 query problems."
+      - "Explore the power of aggregations in ActiveRecord."
+      - "Create custom joins allow you to build sophisticated queries."
     button:
       enable: true
-      label: "Get Started Now"
-      link: "https://github.com/zeon-studio/hugoplate"
+      label: "Read More"
+      link: "/blog/2016-12-12-advanced-active-record/"
+
+  - title: "Create a Github Actions Workflow"
+    image: "/images/github-actions.jpg"
+    content: "Discover how GitHub Actions can revolutionize your Ruby on Rails workflow. Learn to automate tasks and workflows directly within your GitHub repositories. By the end of this article, you'll be able to:"
+    bulletpoints:
+      - "Automate Tests: Trigger automatic test runs whenever new code is pushed, ensuring robustness and reliability."
+      - "Deploy Automatically: Configure your workflows to seamlessly build and deploy your application after merging a pull request."
+      - "Integrate Tools: Utilize key development tools to enhance code quality and security, each introduced through practical, step-by-step guides."
+    button:
+      enable: true
+      label: "Read More"
+      link: "/blog/2020-03-25-github-actions/"
 
   - title: "The Top Reasons to Choose Hugo for Your Hugo Project"
-    image: "/images/service-3.png"
-    content: "With Hugo, you can build modern and content-focused websites without sacrificing performance or ease of use."
-    bulletpoints:
-      - "Instantly load static sites for better user experience and SEO."
-      - "Intuitive syntax and support for popular frameworks make learning and using Hugo a breeze."
-      - "Use any front-end library or framework, or build custom components, for any project size."
-      - "Built on cutting-edge technology to keep your projects up-to-date with the latest web standards."
+    image: "/images/tailwind.jpg"
+    content: "Discover how Tailwind CSS can transform your web applications with its utility-first approach to styling. In this article, we’ll guide you through setting up a Ruby on Rails project with Tailwind CSS, highlighting its responsive design, customization, and built-in dark mode. Learn to create a polished home page using Tailwind UI components and integrate DaisyUI for maintainable styles."
     button:
-      enable: false
-      label: ""
-      link: ""
+      enable: true
+      label: "Read More"
+      link: "/blog/2021-09-14-a-tailwind-tutorial/"
 ---
