@@ -3,7 +3,7 @@ publishDate: "2018-07-04"
 title: "Redis: The Blazing Fast Database"
 category: database
 tags: [redis, database, sql, nosql]
-excerpt: A quick guide to redis!
+image: /images/teaser.jpg
 ---
 
 When you think of databases, you probably imagine massive tables, complex queries, and waiting for your data to load. But what if I told you there’s a database out there that’s lightning-fast, super flexible, and easy to use? Meet Redis, the speed demon of databases.

@@ -3,8 +3,7 @@ publishDate: "2016-02-21"
 title: "Use the Index, Part 1"
 category: SQL
 tags: [SQL]
-header:
-  image: /images/use-the-index.jpg
+image: /images/use-the-index.jpg
 excerpt: Use the Index! Is an online book that goes in-depth about how to use and create indexes. These are a few notes from the book.
 ---
 

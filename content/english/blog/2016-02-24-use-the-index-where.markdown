@@ -3,8 +3,7 @@ publishDate: "2016-02-24"
 title: "Use the Index - Where clause"
 category: SQL
 tags: [SQL]
-header:
-  image: /images/use-the-index.jpg
+image: /images/use-the-index.jpg
 excerpt: Part 2 of the book Use the Index! These are just a few notes that I made while reading this amazing resource.
 ---
 

@@ -3,8 +3,7 @@ publishDate: "2020-04-12"
 title: "How to Create a Free VM Instance in GCP"
 tags: ['GCP']
 excerpt: "...as long as your usage stays within the free tier monthly allowance (750 hours per month for e2-micro instances), you will not be charged. "
-header:
-  image: /images/gcp-cloud.jpg
+image: /images/gcp-cloud.jpg
 ---
 
 ## Note on Billing Information

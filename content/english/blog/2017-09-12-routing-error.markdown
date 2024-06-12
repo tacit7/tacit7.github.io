@@ -1,5 +1,8 @@
-
+---
 publishDate: "2017-09-12"
+title: "Resolving routing error"
+
+---
 ## Resolving the `to must respond to 'action' or 'call', or it must be a String that includes '#' (ArgumentError)` Error
 
 The error you're encountering usually indicates a problem with how the root route is defined in your `config/routes.rb` file. It seems like there's an issue with the syntax or structure of your route definition. Here's how you can resolve it:

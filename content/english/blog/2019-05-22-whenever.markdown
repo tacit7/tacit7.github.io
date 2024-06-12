@@ -3,8 +3,7 @@ publishDate: "2019-05-22"
 title: "Automate Your Scripts with the Whenever Gem: A Simple Guide"
 category: automation
 tags: [ruby, tutorial]
-header:
-  image: /images/whenever.jpg
+image: /images/whenever.jpg
 excerpt: Get ready to automate your tasks with Whenever. Let's dive-in  and see how we can use this gem to easily create and manage cron jobs in Ruby.
 ---
 

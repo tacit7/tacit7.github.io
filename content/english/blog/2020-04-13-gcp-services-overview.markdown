@@ -2,8 +2,7 @@
 publishDate: "2020-04-13"
 title: GCP Services Overview
 tags: [GCP, cheat-sheet]
-header:
-  image: /images/google-services.jpg
+image: /images/google-services.jpg
 excerpt: "A quick guide about the various services offered in the Google cloud."
 ---
 

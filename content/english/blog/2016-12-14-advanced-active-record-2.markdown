@@ -2,11 +2,10 @@
 publishDate: "2016-12-14"
 title: Advanced ActiveRecord Queries Part 2
 tags: [ActiveRecord, Rails]
-header:
-  image: /images/advanced-queries-2.jpg
-  actions:
-    - label: "Part 1"
-      url: "/advanced-active-record"
+image: /images/advanced-queries-2.jpg
+  # actions:
+  #   - label: "Part 1"
+  #     url: "/advanced-active-record"
 excerpt: "Part 2 of the amazing video series by Upcase on advanced ActiveRecord queries.
 Let's dive-in to custom joins and aggregations!"
 ---

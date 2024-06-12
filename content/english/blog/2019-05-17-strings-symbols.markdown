@@ -3,8 +3,7 @@ publishDate: "2019-05-17"
 title: Strings vs Symbols in Ruby
 category: ruby
 tags: [basics, Rails]
-header:
-  image: /images/strings.jpg
+image: /images/strings.jpg
 ---
 
 When coding in Ruby, you’ll often come across both strings and symbols. At first glance, they might seem interchangeable, but they serve different purposes and have distinct characteristics. Here’s a quick rundown to help you understand when to use each.

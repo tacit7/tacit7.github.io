@@ -3,8 +3,7 @@ publishDate: "2013-05-12"
 title: Concise Guide to Kafka
 categories: [Kafka]
 tags: [cheat-sheet]
-header:
-  image: /images/kafka.jpg
+image: /images/kafka.jpg
 excerpt: A quick cheat sheet for kafka.
 ---
 
