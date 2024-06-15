@@ -1,7 +1,7 @@
 ---
 publishDate: "2021-09-14"
 title: "Tailwind in Rails"
-tags: [Rails, JavaScript, tutorial]
+tags: [Rails, JavaScript, Tutorials]
 
 toc: true
 toc_label: 'Tailwind'

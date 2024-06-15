@@ -3,7 +3,7 @@ publishDate: "2015-08-13"
 title: "Marginalia Gem in Rails"
 category: Rails
 image: /images/teaser.png
-tags: [ActiveRecord, Rails, tutorial]
+tags: [ActiveRecord, Rails, Tutorials]
 ---
 
 If you're a Ruby on Rails developer, you're always on the lookout for tools that can make your life easier and your code cleaner. One such gem that deserves a spot in your toolkit is **Marginalia**. This nifty gem helps you annotate your SQL queries with additional context, making debugging and performance tuning a breeze.

@@ -2,7 +2,7 @@
 publishDate: "2020-03-25"
 title: Creating a GitHub Actions Workflow
 category: GitHub
-tags: [tutorial]
+tags: [Tutorials]
 image: /images/github-actions.jpg
 ---
 
