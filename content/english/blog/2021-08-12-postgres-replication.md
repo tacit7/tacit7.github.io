@@ -20,8 +20,8 @@ Now, run the primary PostgreSQL instance:
 
 ```bash
 docker run \
-  --name db-name-1 \
-  --volume ${PWD}/postgres-docker/db01:/var/lib/postgresql \
+  --name db-primary \
+  --volume ${PWD}/postgres-docker/db-primary:/var/lib/postgresql \
   --publish 54321:5432 \
   --env POSTGRES_USER=postgres \
   --env POSTGRES_PASSWORD=postgres \
@@ -31,12 +31,12 @@ docker run \
 
 ### Command Breakdown
 
-`--name db-name-1`:
-This option names the container db-name-1. Naming containers makes it easier to manage and reference them later.
+`--name db-primary`:
+This option names the container db-primary. Naming containers makes it easier to manage and reference them later.
 
-`--volume ${PWD}/postgres-docker/db-name:/var/lib/postgresql`:
+`--volume ${PWD}/postgres-docker/db-primary:/var/lib/postgresql`:
 
-This mounts a volume from the host machine to the container. ${PWD}/postgres-docker/db01 is a directory on the host machine, and /var/lib/postgresql is where PostgreSQL stores its data inside the container. It ensures data persistence even if the container is stopped or removed.
+This mounts a volume from the host machine to the container. ${PWD}/postgres-docker/db-primary is a directory on the host machine, and /var/lib/postgresql is where PostgreSQL stores its data inside the container. It ensures data persistence even if the container is stopped or removed.
 
 `--publish 54321:5432`:
 
@@ -77,7 +77,7 @@ Using the path of the config file, cp the file to your host so that it can be ed
 
 ```bash
 # copy the conf file to the host
-docker cp db01:/var/lib/postgresql/data/postgresql.conf .
+docker cp db-primary:/var/lib/postgresql/data/postgresql.conf .
 
 # create the backup
 cp postgresql.conf postgresql.conf-backup
@@ -91,9 +91,9 @@ wal_level = logical
 Now, copy the file back to the file, restart the database, and check the wall level:
 
 ```bash
-docker cp postgresql.conf db-name-1:/var/lib/postgresql/data/.
-docker restart db-name-1
-docker exec --user postgres -it db-name-1 psql -c "SHOW wal_level"
+docker cp postgresql.conf db-primary:/var/lib/postgresql/data/.
+docker restart db-primary
+docker exec --user postgres -it db-primary psql -c "SHOW wal_level"
 ```
 The last command should show:
 
@@ -117,8 +117,8 @@ In this section, we'll create the necessary users to use replication. We will ne
 First, let's create the replica db by using the following command:
 
 ```bash
-docker run --name db-name-2 \
---volume ${PWD}/postgres-docker/db-name-2:/var/lib/postgresql/data \
+docker run --name db-replica \
+--volume ${PWD}/postgres-docker/db-replica:/var/lib/postgresql/data \
 --publish 54322:5432 \
 --env POSTGRES_USER=postgres \
 --env POSTGRES_PASSWORD=postgres \
@@ -134,13 +134,13 @@ The following steps are a bit complicated, so I wrote a script to automate the p
 # Purpose:
 # - Generate password
 # - store it in .pgpass
-# - Create replication_user using generated password, on db-name-1
-# - Copy .pgpass to db-name-2
+# - Create replication_user using generated password, on db-primary
+# - Copy .pgpass to db-replica
 #
 # The .pgpass password is used to authenticate replication_user,
 # when they run pg_basebackup
 #
-# Make sure db-name-1 and db-name-2 are running
+# Make sure db-primary and db-replica are running
 #
 running_containers=$(docker ps --format "{{.Names}}")
 if echo "$running_containers" | grep -q "db01"; then
@@ -171,11 +171,11 @@ rm -f .pgpass
 echo "*:*:*:replication_user:$REP_USER_PASSWORD" >> .pgpass
 # Copy replication_user.sql to db 1
 docker cp replication_user.sql db 1:.
-echo "Copy .pgpass, chown, chmod it for db 2" # Copy .pgpass to db 2 postgres home dir docker cp .pgpass db-name-2:/var/lib/postgresql/. docker exec --user root -it db-name-2 \
-chown postgres:root /var/lib/postgresql/.pgpass docker exec --user root -it db-name-2 \
+echo "Copy .pgpass, chown, chmod it for db 2" # Copy .pgpass to db 2 postgres home dir docker cp .pgpass db-replica:/var/lib/postgresql/. docker exec --user root -it db-replica \
+chown postgres:root /var/lib/postgresql/.pgpass docker exec --user root -it db-replica \
   chmod 0600 /var/lib/postgresql/.pgpass
 # Create replication_user on db01
-docker exec -it db-name-1 \ psql -U postgres \
+docker exec -it db-primary \ psql -U postgres \
 -f /replication_user.sql
 ```
 Create a file with the code above and run it.  The script does the following:
@@ -184,9 +184,9 @@ Create a file with the code above and run it.  The script does the following:
 - Assigns the password to an env variable.
 - Creates the file replication_user.sql, with CREATE USER SQL commands to create the replication user.
 - Assigns the generated password to replication_user.
-- The SQL file is copied to db-name-1 so it can be run there.
+- The SQL file is copied to db-primary so it can be run there.
 - The generated password is placed in a .pgpass file.
-- The .pgpass file is copied to db-name-2.
+- The .pgpass file is copied to db-replica.
 - Finally, the script will allow replication_user to connect from db02 to db01 using password authentication.
 
 If everything went ok, you will see output like this:
@@ -195,8 +195,8 @@ db01 is running...continuing
 db02 is running...continuing
 Create REP_USER_PASSWORD for replication_user
 <SOME HASH VALE>
-Successfully copied 2.05kB to db-name-1:.
-Copy .pgpass, chown, chmod it for db-name-2
+Successfully copied 2.05kB to db-primary:.
+Copy .pgpass, chown, chmod it for db-replica
 Successfully copied 2.05kB to db02:/var/lib/postgresql/.
 ```
 
@@ -208,13 +208,13 @@ If for some reason you need to redo the steps, you can tell docker to stop the p
 In this section, we'll grant access to the replica user using the [pg_hba.conf](https://www.postgresql.org/docs/current/auth-pg-hba-conf.html) file. See where that file is located using this command:
 
 ```shell
-docker exec --user postgres -it db-name-1  psql -c "SHOW hba_file"`
+docker exec --user postgres -it db-primary  psql -c "SHOW hba_file"`
 ```
 The output should be ` /var/lib/postgresql/data/pg_hba.conf` unless there was some customization done by yourself. We'll be using the hba path shortly.
 
 Now, let's look up the IP of db 2. Use the following command:
 
-`docker container inspect db-name-2  | grep "IPAddress"`
+`docker container inspect db-replica  | grep "IPAddress"`
 
 The output should be something like
 ```sh
@@ -236,16 +236,16 @@ Copy it back and reload the db.
 docker cp db01:/var/lib/postgresql/data/pg_hba.conf .
 cp postgresql.conf pb_hba.conf-backup
 vim pg_hba.conf # add your ip address
-docker exec --user postgres -it db-name-1  psql -c "SELECT pg_reload_conf();"
-docker cp pg_hba.conf db-name-1:/var/lib/postgresql/data/.
+docker exec --user postgres -it db-primary  psql -c "SELECT pg_reload_conf();"
+docker cp pg_hba.conf db-primary:/var/lib/postgresql/data/.
 ```
 
 
 If everything went well, you should be able to access db1 from db2:
 
 ```bash
-docker exec --user postgres -it db-name-2 /bin/bash
-psql postgres://replication_user:@db-name-1/postgres
+docker exec --user postgres -it db-replica /bin/bash
+psql postgres://replication_user:@db-primary/postgres
 ```
 
 
@@ -260,7 +260,7 @@ Essentially, it maintains data consistency and reliability in a replication setu
 
 To create a replication slot, run the following command:
 ```bash
-PGPASSWORD=postgres docker exec -it db-name-1 \
+PGPASSWORD=postgres docker exec -it db-primary \
 psql -U postgres -c \
 "SELECT PG_CREATE_PHYSICAL_REPLICATION_SLOT('db_rep_slot');"
 ```
@@ -273,10 +273,10 @@ Run the following command:
 docker exec --user postgres -it db02 /bin/bash
 rm -rf /var/lib/postgresql/data/* &&  pg_basebackup --host db01 --username replication_user --pgdata /var/lib/postgresql/data --verbose --progress --wal-method stream --write-recovery-conf --slot=db_rep_slot
 exit
-docker restart db-name-2
+docker restart db-replica
 ```
 
-Chec the logs using `docker logs db-name-2`. You should see something like this:
+Chec the logs using `docker logs db-replica`. You should see something like this:
 
 ```txt
 LOG:  started streaming WAL from primary at 0/8000000 on timeline 1
@@ -293,7 +293,7 @@ So far, we configured db1 for replication and gave db2 access to db1. In this se
 You can test your setup by creating a db on db1 and then querying for data in db2.
 
 ``` sh
-docker exec --user postgres -it db-name-1 /bin/bash
+docker exec --user postgres -it db-primary /bin/bash
 psql
 
 # in psql console
