@@ -67,10 +67,10 @@ name = "About"
 pageRef = "/about"
 weight = 1
 
-[[footer]]
-name = "Elements"
-pageRef = "/elements"
-weight = 2
+#[[footer]]
+#name = "Elements"
+#pageRef = "/elements"
+#weight = 2
 
 [[footer]]
 name = "Privacy Policy"
