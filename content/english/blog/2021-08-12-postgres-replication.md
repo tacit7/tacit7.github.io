@@ -318,7 +318,7 @@ You should be able to see the data from db1. Congratulations! you now have a rep
 1. [Host Based Authentication](https://www.postgresql.org/docs/current/auth-pg-hba-conf.html)
 
 2. [ Write Ahead Log ](https://www.postgresql.org/docs/current/wal-intro.htmlx)
-
+https://medium.com/@eremeykin/how-to-setup-single-primary-postgresql-replication-with-docker-compose-98c48f233bbf
 
 
 

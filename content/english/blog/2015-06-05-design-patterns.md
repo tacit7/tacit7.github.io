@@ -67,7 +67,7 @@ end
 ```
 
 ### 2. Presenters
-**Problem**: Mixing presentation logic in views and models leads to cluttered code.
+**Problem**: Mixing presentation logic in views and models leads to a cluttered view.
 
 **Solution**: Use presenters to handle complex view logic, keeping views clean and focused.
 
@@ -93,6 +93,7 @@ class UserPresenter
 end
 
 # In the view (e.g., app/views/users/show.html.erb)
+# You can also move this
 <% user_presenter = UserPresenter.new(@user) %>
 <p>Full Name: <%= user_presenter.full_name %></p>
 <p>Join Date: <%= user_presenter.formatted_join_date %></p>
@@ -100,11 +101,12 @@ end
 ```
 
 ### 3. Query Objects
-**Problem**: Database queries are scattered throughout the application, making them hard to manage.
+**Problem**: Your model has a myriad of queries across different domains making hard to read and organize.
 
-**Solution**: Encapsulate database queries in query objects to make them reusable and testable.
+**Solution**: Encapsulate queries in query objects to make them have cohesiveness and testable.
 
 **Example**:
+
 ```ruby
 # app/queries/recent_posts_query.rb
 class RecentPostsQuery
